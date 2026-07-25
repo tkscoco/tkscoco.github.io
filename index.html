@@ -1,7 +1,187 @@
 <!DOCTYPE html>
 <html lang = "en">
+<meta charset="utf-8">
+<link href="style.css" type="text/css" rel="stylesheet">
+<meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+<script src = "main.js" defer></script>
 
-<div>
-	<p>coco</p>
-	<p>262439a</p>
-</div>
+<!-- whole header section to be visible even with page navigation -->
+<header> 
+<!-- section with quick title for a brief intro -->
+	<section>
+		<h1>How To Design Slides</h1>
+		<h2> A Beginner's Guide</h2>
+	</section>	
+	
+<!-- section used for page navigation (buttons) -->
+	<div id = "headerButtons">
+		<button class = "header-button" id = "homeBtn">Home</button> <!-- buttons that link to other pages -->
+		<button class = "header-button" id = "dosBtn">The "Do's"</button>
+		<button class = "header-button" id = "dontsBtn">The "Don'ts"</button>
+	</div>
+</header>
+
+<main> 
+	<div id = "home"> <!-- section used for homepage + minigame -->
+		<article id = "homeDesc">
+			<h2>How To Design Slides: A Beginner's Guide</h2>
+			<p>This page serves as a guide with simple tips 
+			for beginners at slide designing, highlighting the "dos" 
+			and "donts", which can help to enhance the quality of your slides, 
+			and make them more visually engaging to your audience!</p><br>
+		
+			<!-- for reference i downgraded to non-semantic cause i didnt want to put another section in an article -->
+			<!-- and also validator hates me -->
+			<div id = "progress"> 
+				<h2>Quiz Progress:</h2>
+				<div id = "progressBar">
+					<div id = "progressFillPctg">
+						<div id = "progressCat"></div>
+					</div>
+					
+				</div> <!-- a container for progress bar -->
+				<h2 id = "progressPctg">0%</h2>
+			</div>
+		</article>
+	
+		<article id = "game"> <!-- game goes within main body, beside the homepage description -->
+			<h3> Slide Design Trivia </h3>		
+			<p> Test your knowledge on slide design with this mini-quiz!</p>
+			<section id = "gameScreen">
+				<div id = "gameDialogue">
+					A little trivia to see how much you know about slides designing!<br>
+					Click anywhere in this box to start!
+					<br> At any point in time, click on the cat to quit!
+				</div>
+				
+				<div id = "gameCharacter">
+					<div id="cat"></div>
+				</div>
+				
+				<div id = "gameQuiz">
+						<h3 id = "timer"> Timer: 10</h3>
+						<h3 id = "scorebox"> Score: 0</h3>
+							<input type = "radio" name = "question" id = "option1" value = "1"><label for = "option1">Left </label><br>
+							<input type = "radio" name = "question" id = "option2" value = "2"><label for = "option2">Centre</label> <br>
+							<input type = "radio" name = "question" id = "option3" value = "3"><label for = "option3">Right</label> <br>
+							<input type = "radio" name = "question" id = "option4" value = "4"><label for = "option4">Justified</label> 
+						<br><br>
+						<button id = "submitAns">Submit</button>
+				</div>
+			</section>
+		</article>
+	</div>
+
+	<div id = "dos">  <!-- section used for tips on things you should do -->
+		<article id = "dosHeader">
+			<h2> Things You Should Do </h2>
+		</article>
+
+		<article class = "dosArticle">
+			<h3>Align Text To Left</h3>
+			<p>text is typically aligned to the left side so as to improve readability, 
+			since there are less text rags (uneven ends) than if your text 
+			were to be aligned to the centre.
+			additionally, since most people read left to right, it is generally more recommended 
+			to align text to the left, rather than the right.</p>
+		</article>
+		
+		<article class = "dosArticle">
+			<h3>Keep Your Headings Short</h3>
+			<p>Headings should generally be around seven words, 
+			and span across one line at best. Headings are the big idea that you aim to present, 
+			a quick conclusion of that specific point. You want it short. You want it simple. 
+			That’s how you can efficiently capture your audience’s attention.</p>
+		</article>
+		
+		<article class = "dosArticle">
+			<h3>Avoid Cluttering Of Visuals</h3>
+			<p>Sometimes you have a lot of ideas and a lot of visuals that compliment, 
+			but what happens when you have far too many of them? 
+			Suddenly, the main focus of your slide is driven away by the colourful charts 
+			that you present to them. That’s not what you want. 
+			What you want is a clean. simplistic feel to your slides. 
+			You want an adequate use of visuals, kept to three or less, that guide your audience to the big idea, 
+			instead of distracting them away from it.</p>
+		</article>
+		
+		<article class = "dosArticle">
+			<h3>Use Contrasting Colours</h3>
+			<p>Keep a high contrast between the text and background colours, 
+			it enhances the clarity of your content, helping the audience read it better. 
+			If you find yourself struggling to match background and text colours, 
+			one easy way is to use a very dark background against a much lighter text colour. 
+			If that isn’t satisfactory, you could try generating a colour palette for use at: </p>
+			<a href = "https://coolors.co" target="_blank">coolors.co!</a>
+		</article>
+	</div>
+
+	<div id = "donts">  <!-- section used for tips on things you shouldnt do -->
+		<article id = "dontsHeader">
+			<h2>Things You Shouldn't Do</h2>
+			<p>Hover over each section to read more!</p>
+		</article>
+
+		<article class = "dontsArticle" id = "dontsArticle1">
+			<h3>Don't Insert Walls Of Text</h3>
+			<p>Do you ever stare at a large wall of text and find yourself lost two sentences in? 
+			You hear the presenter reading, but the words seem to fade into background noise? 
+			Sometimes, more is less. You may want to convey a lot of ideas that come off as wordy, 
+			but you’ll soon realise that your audience has already derailed from your train of thoughts! 
+			</p>
+			<ul>
+				<li>Instead, you should cut down on the words shown on a slide, 
+				and only leave in the key points. If all the important points 
+				dont fit in one slide, how about we try breaking them down into multiple?</li>
+			</ul>
+		</article>
+		
+		<article class = "dontsArticle" >
+			<h3>Don't Use "Ugly" Fonts</h3>
+			<p>Cursive and calligraphy fonts, while classy, are generally hard to read, 
+			especially for people with reading disabilities. This makes it harder for them to 
+			understand the point that you are conveying!</p>
+			<p>While undertale characters are generally loved, 
+			please dont use the fonts they were named after — "comic sans" and "papyrus". 
+			The lack of a consistent visual weight makes your text appear informal, 
+			which can heavily impact the tone that you are trying to set for your presentation</p>
+			<ul>
+				<li>Instead, try opting for the traditional san serif fonts, like arial</li>
+			</ul>
+		</article>
+		
+		<article class = "dontsArticle">
+			<h3>Don't Overuse Capital Letters</h3>
+			<p>"LOOK OVER HERE! THIS IS THE DESCRIPTION OF AN IMPORTANT POINT THAT I WANT TO SHARE, 
+			AND I WILL PUT ALL THE TEXT IN CAPITAL LETTERS SO YOU SEE THEM CLEARLY!!!" 
+			Does it feel a little bit overwhelming? The use of all caps in text makes you look like youre yelling at your audience, 
+			and there is no longer a distinct emphasis on the important part of your point – which means your important points 
+			are no longer important! </p>
+			<ul>
+				<li>Ideally, if you wanted to use capital letters, 
+				stick to using them only in headers. That’s your safest option.</li>
+			</ul>
+		</article>
+		
+		<article class = "dontsArticle">
+			<h3>Dont Overuse Transitions</h3>
+			<p>Sometimes you find your slide folding itself into a paper airplane and flying away to unveil the next slide. 
+			That’s not necessarily wrong, but sometimes it feels distracting, 
+			and can put a total offset to the mood of your presentation. 
+			Some animations, when excessively used, may lead your audience to think of thise slide deck as poorly designed, 
+			such that it feels unprofessional!</p>
+			<ul>
+				<li>What you can do, however, is to limit the use of transitions; 
+				use them only when you feel like it is related to the theme of your slides, 
+				or help to control their pacing</li>
+			</ul>
+		</article>
+	</div>
+</main>
+
+<footer>
+	<p> This website also works on mobile! Scan the QR code below to access it: <br>
+	[placeholder for qr]
+</footer>
+
+</html>
