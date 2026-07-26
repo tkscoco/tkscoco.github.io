@@ -426,8 +426,12 @@ just makes the element/class scale up (grow) a little */
 }
 
 footer{
-	height: 20vh;
+	height: auto;
 	background-color: white;
+}
+
+#qrCodeImg{
+	width: 20vw;
 }
 
 /* i love responsive web!!
@@ -505,6 +509,10 @@ header > section > h2{
 
 footer{
 	display: none;
+}
+
+#qrCodeImg{
+	display:none;
 }
 	
 }
