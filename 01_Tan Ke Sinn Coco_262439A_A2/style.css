@@ -1,0 +1,510 @@
+
+/* imports a custom font named lemonmilk */
+@font-face{
+	font-family:'lemonmilk';
+	src: url("fonts/lemonmilk.woff2") format('woff2');
+}
+
+/* imports another custom font named aston-script */
+
+@font-face{
+	font-family:'aston-script';
+	src: url("fonts/aston-script.woff2") format('woff2');
+}
+
+/* centers all content */
+*{
+	margin-left: auto;
+	margin-right: auto;
+	align-content: center;
+}
+
+body{
+	background: #0F0F24;
+	width: 70vw; /* limits width of whole page to 70vw */
+}
+
+p{
+	font-size: 1em;
+}
+/* header css */
+
+header, .header-button{
+	font-family: lemonmilk;
+}
+
+header{
+	margin-top: 20px;
+	background-image: linear-gradient(#0E1A5990, #00000090), url("images/header-bg.jpg");
+	background-position: center;
+	color: #FFFFFF;
+	text-shadow: 3px 3px 5px #00000070;
+	box-sizing: border-box;
+	border: 3px solid #0A0D36;
+	border-bottom: none;
+}
+header > section{
+	height: 15vh;
+	padding: 5px;
+	text-align: center;
+}
+
+header > section > h1{
+	font-size: 3.5vw;
+	margin: auto;
+	width: 49vw;
+}
+header > section > h2{
+	margin-top: auto;
+	margin-bottom: auto;
+	font-size: 2vw;
+	width: 23vw;
+}
+
+header > section > h1:hover{
+	animation: highlightDesc 0.8s ease-in forwards;
+}
+
+/* a highlight animation */
+@keyframes highlightDesc{
+	0%{
+		/* background is pretty much a horizontal 50/50 of colour and nothing*/
+		background: linear-gradient(to right, #576BEB 50%, transparent 50%);
+		background-size: 0%;
+		background-repeat: no-repeat;
+	}
+	100%{
+		/* im actually making the colour fill 100% of width */
+		/* then i make background super big so it reaches the end */
+		background: linear-gradient(to right, #576BEB, #576BEB); /* colors the right side of the background such that its the same as the left */
+		background-size: 500%; /* background grows to */
+	}
+}
+
+/* page nav buttons css */
+
+#headerButtons{
+	background-color: #0F1C5C;
+	height: 4vh;
+	align-content: center;
+	text-align: center;
+}
+
+.header-button{
+	color: #A8B5FF;
+	background: none;
+	border: none;
+	font-size: 17px;
+	transition: transform 0.3s ease-out;
+}
+.header-button:hover{
+	border-bottom: 2px solid #B8BFDB; /* upon hover, a border (line) is created below the respective button */
+	color: #FFFFFF; /* text colour changes to white */
+	transform: scale(1.05, 1.05); /* also made it bigger so you can see the button */
+	animation: buttonShift 0.75s ease-in;
+}
+
+/* animation for button */
+
+@keyframes buttonShift{
+	0%{
+		/* similar logic to highlightButton */
+		background: radial-gradient(circle, #7080CF, transparent);
+		background-size: 0%; 
+		background-repeat: no-repeat;
+	}
+
+	100%{
+		background: none;
+		background-size: 500%; /* makes the background grow to 5x the size */
+	}
+	
+}
+
+
+main > div{
+	background-color: #232353;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+main > div > article{
+	flex-wrap: wrap;
+	margin: 10px;
+	background: #3B3B78;
+	color: #A0ACE8;
+	margin: 10px;
+}
+
+/* homepage */
+
+
+#homeDesc{
+	flex: 28%;
+	padding: 5px;
+}
+
+#homeDesc > h2{
+	color: #B8BFDB;
+	font-size: 2vw;
+}
+
+#homeDesc > p {
+	padding-left: 10px;
+	padding-right: 5px;
+	border-left: 5px solid #B8BFDB;
+}
+
+#progress{
+	height: 40vh;
+	background: white;
+	border-radius: 15px;
+	margin: 5px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#progress > h2{
+	flex: 100%;
+	margin-left: 20%;
+	color: black;
+}
+
+#progressFillPctg{
+	position: absolute;
+	background-color: #7DED32;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 0%;
+	transition: width 0.5s ease-out;
+}
+
+#progressCat{
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -40%);
+	width: 100px;
+	height: 100px;
+	background-image: url("images/happyCat.png");
+	background-repeat: no-repeat;
+	transition: left 0.5s ease-out;
+}
+
+#progressBar{
+	position: relative;
+	width: 80%;
+	height: 10vh;
+	margin: auto;
+	border: 3px solid black;
+	overflow: hidden; 
+	/* anything out of the container is hidden
+	because my cat likes going underground... */
+}
+ #progressPctg{
+	 color: black;
+ }
+
+
+#game{
+	flex: 67%;
+}
+
+#gameScreen{
+	background-color: #283180;
+	height: 60vh;
+	margin: 15px;
+	border: 3px solid white;
+	border-radius: 10px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#gameScreen > div{
+	padding: 10px;
+	margin: 10px;
+	border-radius: 7px;
+	background: white;
+}
+
+#gameScreen > div > p, #gameScreen > div > h3, #gameScreen > div > label{
+	color: black;
+}
+
+#gameDialogue{
+	flex: 4;
+	color: #1D2A8C;
+}
+
+#gameDialogue:hover{
+	animation: grow 0.2s forwards;
+}
+
+#gameCharacter{
+	flex: 1;
+}
+
+#cat {
+    width: 128px;
+    height: 128px; 
+    background-image: url("images/cssSprites.png");
+	/* sprites used are all drawn by @basiilleaf on X*/
+    background-repeat: no-repeat;
+}
+
+/* pretty much the classes so i can change them later*/
+.cat-1 { background-position: 0px 0px; }
+.cat-2 { background-position: -120px 0px; }
+.cat-3 { background-position: -240px 0px; }
+
+#gameCharacter > img{
+	width: 9vw;
+	height: auto;
+}
+
+#gameQuiz{
+	flex: 100%;
+	height: 30vh;
+}
+
+#gameQuiz > input{
+	margin-left: 15px;
+	margin-right: 5px;
+}
+
+#dos{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#dosHeader, #dontsHeader{
+	width: 100%;
+	background: #313A7F;
+	text-align: center;
+}
+
+#dosHeader> h2, #dontsHeader> h2{
+	font-size: 30px;
+	color: #97A2F6;
+	font-family: lemonmilk;
+}
+
+#dosHeader:hover, #dontsHeader:hover{
+	animation: grow 0.2s forwards;
+}
+
+.dosArticle, .dontsArticle{
+	border-radius: 5px;
+	padding: 10px;
+	box-sizing: border-box;
+	overflow-y: auto;
+	scrollbar-color: #FFFFFF #3B3B78;
+}
+
+.dosArticle{
+	flex: 1;
+	height: auto;
+}
+
+.dontsArticle{
+	flex: 48%;
+	height: 26vh;
+}
+
+.dosArticle > a{
+	color: #FFFFFF;
+}
+
+/* mr suen said my page looks boring
+so i made sure you see all the cool effects */
+
+/* ps this is meant to intentionally look bad as a 
+negative example + all effects match the "dont do this"
+in the header, so its technically irony */
+
+#dontsHeader{
+	animation-name: colorShift;
+	animation-duration: 4s;
+	animation-iteration-count: infinite; 
+	/* infinite: forces animation to run forever */
+}
+
+#dontsHeader> p{
+	margin-top: -1.7em;
+}
+
+@keyframes colorShift{
+	0%{
+		background: red;
+	}
+	25%{
+		background: yellow;
+	}
+	50%{
+		background: blue;
+	}
+	100%{
+		background: red;
+	}
+}
+
+#dontsHeader > h2, #dontsHeader > p, .dosArticle > h3{
+	color: white;
+}
+
+.dontsArticle:nth-child(3){ 
+/* im using nth-child() just to prove that i know how to */
+	font-family: aston-script;
+	position: relative;
+	z-index: 5;
+}
+
+.dontsArticle:nth-child(4){
+	font-family: lemonmilk;
+	position: relative;
+	z-index: 3;
+}
+
+.dontsArticle:nth-child(3):hover, .dontsArticle:nth-child(4):hover{
+	font-family: times new roman;
+}
+
+.dontsArticle:nth-child(5){
+	animation: spinning 4s linear infinite;
+	animation-play-state: var(--playState);
+	position: relative;
+	z-index: 1;
+}
+
+/* container just... spins. it turns 90 degrees at each point 
+and keeps going cause iteration count inf*/
+@keyframes spinning{
+	0%{
+		rotate: 0deg;
+	}
+	25%{
+		rotate: 90deg; 
+	}
+	50%{
+		rotate: 180deg;
+	}
+	75%{
+		rotate: 270deg;
+	}
+	100%{
+		rotate: 360deg;
+	}
+}
+
+.dontsArticle:hover{
+	animation: grow 0.2s forwards;
+	background-color: #3A275C;
+}
+#cancelAnimation{
+	width: 20vw;
+	font-size: 1.5em;
+	font-family: lemonmilk;
+	color: white;
+	background-color: #5271a3;
+	position: relative;
+	z-index: 2;
+}
+
+#cancelAnimation:hover{
+	animation: grow 0.2s forwards;
+}
+
+/* literally my favourite animation. 
+just makes the element/class scale up (grow) a little */
+@keyframes grow{
+	0%{
+		transform: scale(1, 1);
+	}
+	100%{
+		transform: scale(1.01, 1.01);
+	}
+}
+
+footer{
+	height: 20vh;
+	background-color: white;
+}
+
+/* i love responsive web!!
+mobile / 800px breakpoint */
+
+@media(max-width: 800px){
+
+body{
+	width: 100vw;
+	margin-top: -20px;
+}
+#headerButtons{
+	display:flex;
+	flex-direction: column;
+	height: auto;
+}
+
+header > section > h1{
+	width: 70vw;
+	font-size: 5vw;
+}
+
+header > section > h2{
+	width: 70vw;
+	font-size: 4vw;
+}
+
+#home{
+	flex-direction: column;
+}
+
+#homeDesc{
+	height: auto;
+}
+
+#homeDesc > h2{
+	font-size: 2em;
+}
+
+#progress{
+	height: auto;
+}
+
+#gameScreen{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#gameDialogue{
+	flex:3;
+}
+
+#gameCharacter{
+	flex: 1;
+}
+
+#gameQuiz{
+	height: auto;
+}
+
+#cat{
+	width: 50px;
+	height: 50px;       
+    background-image: url("images/cssSprites.png");
+    background-size: 300% 100%;
+    background-repeat: no-repeat;
+}
+.cat-1 { background-position: 0% 0%; }
+.cat-2 { background-position: 50% 0%; }
+.cat-3 { background-position: 100% 0%; }
+
+#dos, #donts{
+	flex-direction: column;
+}
+
+footer{
+	display: none;
+}
+	
+}
